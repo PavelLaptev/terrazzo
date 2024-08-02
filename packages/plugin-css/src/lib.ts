@@ -1,8 +1,8 @@
 import type { TokenNormalized, TokenTransformed } from '@terrazzo/parser';
 
-export type UtilityCSSGroup = 'bg' | 'border' | 'font' | 'layout' | 'shadow' | 'text';
+export type UtilityCSSGroup = 'bg' | 'border' | 'font' | 'layout' | 'shadow' | 'text' | 'clr';
 
-export type UtilityCSSPrefix = 'bg' | 'border' | 'font' | 'gap' | 'm' | 'p' | 'shadow' | 'text';
+export type UtilityCSSPrefix = 'bg' | 'border' | 'font' | 'gap' | 'm' | 'p' | 'shadow' | 'text' | 'clr';
 
 export const FORMAT_ID = 'css';
 

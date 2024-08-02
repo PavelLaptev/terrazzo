@@ -7,6 +7,7 @@ import type { CSSRule, UtilityCSSGroup, UtilityCSSPrefix } from '../lib.js';
 // micro-optimization: precompile all RegExs (which can be known) because dynamic compilation is a waste of resources
 const GROUP_REGEX: Record<UtilityCSSPrefix, RegExp> = {
   bg: /(^bg-|-bg-)/,
+  clr: /(^clr-|-clr-)/,
   border: /(^border-|-border-)/,
   font: /(^font-|-font-)/,
   gap: /(^gap-|-gap-)/,
@@ -58,6 +59,12 @@ export default function generateUtilityCSS(
               });
             }
           }
+        }
+        break;
+      }
+      case 'clr': {
+        for (const token of matchingTokens) {
+          output.push({ selectors: [makeSelector(token, 'clr')], declarations: { color: makeVarValue(token) } });
         }
         break;
       }
